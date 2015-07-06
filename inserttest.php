@@ -5,16 +5,7 @@
 <title>Untitled Document</title>
 </head>
 
-<body>
-	<form  action=""  method="POST">
-	<p>題序:
-     <input type="text" name="TopicNo"  />
-            
-</p>
-	<p>&nbsp;</p>
 
-  <p>
-    <input name="btn" type="submit"  id="btn" />
   
 
 <p>
@@ -34,5 +25,4 @@
 
 	 ?>
 </p>
-</body>
-</html>
+
