@@ -2,7 +2,7 @@
 
 // 資料庫相關資料
 $database_dblink = "staff";
-$username_dblink = "root";
+$username_dblink = "staff";
 $password_dblink = "0935820227";
 
 
@@ -20,7 +20,7 @@ header("Content-Type:text/html; charset=utf-8");
 //老師端補點名
 	if ((isset($_POST["name"])))
 	{
-	 $link = mysql_pconnect("localhost", "root", "0935820227");
+	 $link = mysql_pconnect("localhost", "staff", "0935820227");
 	 mysql_select_db("staff",$link) or die("無法選擇資料庫");
 	 mysql_query("SET NAMES 'utf8'");
 	 

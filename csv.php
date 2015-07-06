@@ -1,6 +1,6 @@
 <?php
 $database_link = "staff";
-$username_link = "root";
+$username_link = "staff";
 $password_link = "0935820227";
 // 建立資料庫連線
 $link = mysql_pconnect("localhost", $username_link, $password_link) or trigger_error(mysql_error(),E_USER_ERROR);

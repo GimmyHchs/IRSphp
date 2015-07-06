@@ -2,7 +2,7 @@
 
 // 資料庫相關資料
 $database_dblink = "staff";
-$username_dblink = "root";
+$username_dblink = "staff";
 $password_dblink = "0935820227";
 
 
