@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<form  action=""  method="POST">
+	<form  action=""  method="get">
 	<p>題序:
      <input type="text" name="TopicNo"  />
             
