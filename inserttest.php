@@ -7,4 +7,6 @@
 	$e=mysql_query($d,$link);
 	$f=mysql_result($e,0);
 	echo $f;
+	$sql = "insert into answer (TopicNo,StartTime) values('23','2014-07-07')" or die("insert error");
+	mysql_query($sql,$link);
 ?>
