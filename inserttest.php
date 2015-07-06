@@ -26,7 +26,7 @@
 	 mysql_select_db("staff",$link) or die("無法選擇資料庫");
 	 mysql_query("SET NAMES 'utf8'");
 	
-	$sql = "insert into openanswer (IfOpenanswer,TopicNo,time) values('T','$TopicNo','$date_time')" or die("insert error");
+	$sql = "insert into openanswer (IfOpenanswer,TopicNo,time) values('T','1','123')" or die("insert error");
  
 	
 	
