@@ -9,4 +9,5 @@
 	echo $f;
 	$sql = "insert into answer (TopicNo,StartTime) values('23','2014-07-07')" or die("insert error");
 	mysql_query($sql,$link);
+	echo "hello";
 ?>
