@@ -39,8 +39,7 @@
 	 if($C==0)
 	 $C++;
 	 for($i=0;$i<$f;$i++){	
-	 $sql = "insert into answer (TopicNo) values('$TopicNo')" or die("insert error");
-	 $sql = "insert into answer (StartTime) values('$date_time')" or die("insert error");
+	 $sql = "insert into answer (TopicNo,StartTime) values('$TopicNo','$date_time')" or die("insert error");
 	 mysql_query($sql,$link);
 	 
 	 $j="select max(answer_id) from answer";
