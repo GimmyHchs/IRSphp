@@ -51,7 +51,7 @@
 	 echo $l;
 	 
 		}
-   ?>
+?>
 </p>
 <p>
 <?php
@@ -67,8 +67,7 @@
 	
 	
 	mysql_query($sql,$link);
-	
-  ?>
+?>
 </p>
 </body>
 </html>
