@@ -1,94 +1,79 @@
-<?php
-// 資料庫相關資料
-$database_link = "staff";
-$username_link = "staff";
-$password_link = "0935820227";
-// 建立資料庫連線
-$link = mysql_pconnect("localhost", $username_link, $password_link) or trigger_error(mysql_error(),E_USER_ERROR);
-mysql_query("SET NAMES utf8",$link);
-mysql_query("SET CHARACTER_SET_CLIENT=utf8",$link);
-mysql_query("SET CHARACTER_SET_RESULTS=utf8",$link);
-mysql_select_db($database_link, $link);
-// 宣告utf-8的編碼
-header("Content-Type:text/html; charset=utf-8");
-// 接收POST/GET的資料
-		//$c=選擇開放作答的ID(第一筆)
-		//學生端做答
-	date_default_timezone_set('Asia/Taipei');   
-	$date_time = date("H:i:s");
-	
-		$a="select max(id) from openanswer";
-		$b=mysql_query($a,$link);
-		$c= mysql_result($b,0);
-		
-		//echo $c;
-	    //透過$c來找$f=IfOpenanswer這欄位T還是F
-		$d="SELECT IfOpenanswer from openanswer  where id=$c";
-		$e=mysql_query($d,$link)or die(mysql_close ($link));
-		$f= mysql_result($e,0);	
-	
-		//echo $f;
-		//$ff選擇最大的answer_id
-		$dd="select max(answer_id) from answer";
-		$ee=mysql_query($dd,$link)or die(mysql_close ($link));
-		$ff= mysql_result($ee,0);
-		//echo $ff;
-		//$hh透過$ff找尋topicno
-		
-		
-		$aa="SELECT TopicNo from  answer  where answer_id=$ff";
-		$gg=mysql_query($aa,$link)or die(mysql_close ($link));
-		$hh= mysql_result($gg,0);
-		
-		//echo $hh;
-		//判斷式IMEI只要在指定TOPIC第幾題才能修改,避免相同IMEI全部更改
-		if($f!=F)
-		{
-			$k="UPDATE answer  SET answer='$answer' where IMEI='$IMEI'&&TopicNo='$hh'";
-		$l=mysql_query($k,$link);
-		
-		
-		
-		$m="UPDATE answer  SET Student_time='$date_time' where IMEI='$IMEI'&&TopicNo='$hh'";
-		$n=mysql_query($m,$link);
-		
-		}
-		
-		
-		 
-		$abcd = "select answer from answer where IMEI='$IMEI'&&TopicNo='$hh' ";
-		$abcde = mysql_query($abcd, $link) or die(mysql_close ($link));
-		
-		$abcdef= mysql_result($abcde,0);
-		
-		
-		
-		echo $abcdef;
-		
-		$qwe = "select Student_time from answer where IMEI='$IMEI'&&TopicNo='$hh' ";
-		$asd = mysql_query($qwe, $link) or die(mysql_close ($link));
-		
-		$zxc= mysql_result($asd,0);
-		
-		
-		
-		echo '    '.$zxc;
-		echo " 伺服器時間";
-	$a1="select authority from staff where authority='1'";
-$a2 = mysql_query($a1, $link) or die(mysql_error());
-		$a3= mysql_num_rows($a2);
-		//echo $abcde;
-	$a4="select max(id) from openanswer";
-		$a5=mysql_query($a4,$link)or die(mysql_close ($link));
-		$a6= mysql_result($a5,0);	
-		
-$a7="select IfOpenanswer from openanswer where id='$a6'";
-$a8=mysql_query($a7,$link);
-$a9= mysql_result($a8,0);
-if($a9=="F")
-{
-	echo "123";
-}
-?>
- 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
 
+<body>
+	<form  action=""  method="get">
+	<p>題序:
+     <input type="text" name="TopicNo"  />
+            
+</p>
+	<p>&nbsp;</p>
+
+  <p>
+    <input name="btn" type="submit"  id="btn" />
+  
+<p>
+
+<?php
+	//echo   	$date_time  記錄時間;
+	date_default_timezone_set('Asia/Taipei');   
+	$date_time = date("Y-m-d H:i:s");
+
+	//存入staff資料庫
+	//老師開放題目
+	if ((isset($_POST["TopicNo"])))
+	{
+	 $link = mysql_pconnect("localhost", "staff", "0935820227");
+	 mysql_select_db("staff",$link) or die("無法選擇資料庫");
+	 mysql_query("SET NAMES 'utf8'");
+	
+	 $d="select max(id) from staff";
+	 $e=mysql_query($d,$link);
+	 $f= mysql_result($e,0);
+	 echo $f;
+	 $A="select min(answer_id) from answer";
+	 $B=mysql_query($A,$link);
+	 $C= mysql_result($B,0);
+	 if($C==0)
+	 $C++;
+	 for($i=0;$i<$f;$i++){	
+	 $sql = "insert into answer (TopicNo,StartTime) values('$TopicNo','$date_time')" or die("insert error");
+	 mysql_query($sql,$link);
+	 
+	 $j="select max(answer_id) from answer";
+	 $k=mysql_query($j,$link);
+	 $l= mysql_result($k,0);
+	 $g="update answer set  IMEI =(select IMEI from staff where id='$C' ) where answer.answer_id='$l'";
+	 $h=mysql_query($g,$link);
+	 $C++;
+	 echo $l;
+	 
+		}}
+?>
+</p>
+<p>
+<?php
+	
+	//第二個存入data2的資料庫
+	if ((isset($_POST["TopicNo"])))
+	{
+	 $link = mysql_pconnect("localhost", "staff", "0935820227");
+	 mysql_select_db("staff",$link) or die("無法選擇資料庫");
+	 mysql_query("SET NAMES 'utf8'");
+	
+	$sql = "insert into openanswer (IfOpenanswer,TopicNo,time) values('T','$TopicNo','$date_time')" or die("insert error");
+ 
+	
+	
+	mysql_query($sql,$link);
+	}
+?>
+
+
+</p>
+</body>
+</html>	
