@@ -3,7 +3,6 @@
 <p>題序:
 <input type="text" name="TopicNo"/>
 <input name="btn" type="submit"  id="btn"/>
-</form>
 <?php
 	//第二個存入data2的資料庫
 	date_default_timezone_set('Asia/Taipei');   
@@ -14,4 +13,5 @@
 	$sql = "insert into openanswer (IfOpenanswer,TopicNo,time) values('T',"$_POST[TopicNo]",'$date_time')" or die("insert error");
 	mysql_query($sql,$link);
 ?>
+</form>
 </html>
