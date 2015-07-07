@@ -1,4 +1,4 @@
-1<?php
+<?php
 
 // 資料庫相關資料
 $database_dblink = "staff";
