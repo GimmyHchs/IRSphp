@@ -17,6 +17,9 @@
     <input name="btn" type="submit"  id="btn" />
   
 <p>
+</p>
+</body>
+</html>	
 <?php
 	//echo   	$date_time  記錄時間;
 	date_default_timezone_set('Asia/Taipei');   
@@ -71,7 +74,5 @@
 	mysql_query($sql,$link);
 	}
 ?>
-</p>
-</body>
-</html>
+
 
