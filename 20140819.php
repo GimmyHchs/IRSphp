@@ -4,16 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
+
 <body>
-	<form  action=""  method="post">
+	<form  action=""  method="get">
 	<p>題序:
-     <input type="text" name="TopicNo/>
+     <input type="text" name="TopicNo"  />
             
 </p>
 	<p>&nbsp;</p>
 
   <p>
-    <input name="btn" type="submit"  id="btn"/>
+    <input name="btn" type="submit"  id="btn" />
   
 <p>
 
@@ -24,7 +25,8 @@
 
 	//存入staff資料庫
 	//老師開放題目
-	
+	if ((isset($_POST["TopicNo"])))
+	{
 	 $link = mysql_pconnect("localhost", "staff", "0935820227");
 	 mysql_select_db("staff",$link) or die("無法選擇資料庫");
 	 mysql_query("SET NAMES 'utf8'");
@@ -50,14 +52,15 @@
 	 $C++;
 	 echo $l;
 	 
-		}
+		}}
 ?>
 </p>
 <p>
 <?php
 	
 	//第二個存入data2的資料庫
-	
+	if ((isset($_POST["TopicNo"])))
+	{
 	 $link = mysql_pconnect("localhost", "staff", "0935820227");
 	 mysql_select_db("staff",$link) or die("無法選擇資料庫");
 	 mysql_query("SET NAMES 'utf8'");
@@ -67,8 +70,10 @@
 	
 	
 	mysql_query($sql,$link);
+	}
 ?>
+
+
 </p>
 </body>
-</html>
-
+</html>	
