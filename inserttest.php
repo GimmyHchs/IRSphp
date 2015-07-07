@@ -1,10 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+	<form  action=""  method="get">
+	
+<p>題序:
+     <input type="text" name="TopicNo"  />
+     <input name="btn" type="submit"  id="btn" />
+</p>
+
+
+
+
+
+
+
 <?php
 	
 	//第二個存入data2的資料庫
 	date_default_timezone_set('Asia/Taipei');   
 	$date_time = date("Y-m-d H:i:s");
 
-	 $link = mysql_pconnect("localhost", "staff", "0935820227");
+	 $link = mysql_pconnect("localhos</p>
+t", "staff", "0935820227");
 	 mysql_select_db("staff",$link) or die("無法選擇資料庫");
 	 mysql_query("SET NAMES 'utf8'");
 	
@@ -15,5 +31,9 @@
 	mysql_query($sql,$link);
 	
 ?>
+</body>
+
+
+</html>	
 
 
