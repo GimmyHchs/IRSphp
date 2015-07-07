@@ -5,6 +5,6 @@
 	$link = mysql_pconnect("localhost", "staff", "0935820227");
 	mysql_select_db("staff",$link) or die("無法選擇資料庫");
 	mysql_query("SET NAMES 'utf8'");
-	$sql = "insert into openanswer (IfOpenanswer,TopicNo,time) values('T','3','$date_time')" or die("insert error")
+	$sql = "insert into openanswer (IfOpenanswer,TopicNo,time) values('T','3','4')" or die("insert error")
 	mysql_query($sql,$link);
 ?>
