@@ -3,8 +3,8 @@
 	date_default_timezone_set('Asia/Taipei');   
 	$date_time = date("Y-m-d H:i:s");
 
-	 $link = mysql_pconnect("localhos</p>
-t", "staff", "0935820227");
+	$link = mysql_pconnect("localhost", "staff", "0935820227");
+
 	 mysql_select_db("staff",$link) or die("無法選擇資料庫");
 	 mysql_query("SET NAMES 'utf8'");
 	
