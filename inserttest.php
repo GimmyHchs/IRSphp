@@ -25,6 +25,4 @@ t", "staff", "0935820227");
      <input name="btn" type="submit"  id="btn" />
 </p>
 </body>
-
-
 </html>	
