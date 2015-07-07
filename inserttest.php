@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-<body>
-	<form  action=""  method="get">
+
+<form  action=""  method="get">
 	
 <p>題序:
      <input type="text" name="TopicNo"  />
