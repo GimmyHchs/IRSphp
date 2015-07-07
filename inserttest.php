@@ -24,5 +24,4 @@ t", "staff", "0935820227");
 	mysql_query($sql,$link);
 	
 ?>
-</body>
 </html>
