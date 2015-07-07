@@ -1,8 +1,8 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <form  action=""  method="get">
 <p>題序:
-     <input type="text" name="TopicNo"/>
- <input name="btn" type="submit"  id="btn"/>
+<input type="text" name="TopicNo"/>
+<input name="btn" type="submit"  id="btn"/>
 <?php
 	//第二個存入data2的資料庫
 	date_default_timezone_set('Asia/Taipei');   
