@@ -1,11 +1,10 @@
 <html>
 <form  action=""  method="get">
 <p>題序:
-     <input type="text" name="TopicNo"  />
-     <input name="btn" type="submit"  id="btn" />
+     <input type="text" name="TopicNo"/>
+     <input name="btn" type="submit" id="btn"/>
 </p
 <?php
-	
 	//第二個存入data2的資料庫
 	date_default_timezone_set('Asia/Taipei');   
 	$date_time = date("Y-m-d H:i:s");
