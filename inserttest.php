@@ -7,6 +7,7 @@
      <input name="btn" type="submit"  id="btn" />
 </p>
 </body>
+</html>
 <?php
 	
 	//第二個存入data2的資料庫
